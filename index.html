@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management & Communication Émotionnelle | Bienveillance et Performance</title>
+    <meta name="description" content="Formation certifiante en management et communication émotionnelle pour développer vos soft skills">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #1E2A44;
+            background-color: #FEFDFB;
+        }
+
+        /* Variables de couleur */
+        :root {
+            --primary: #1E2A44;
+            --accent: #D96C3F;
+            --light-bg: #F7F3EE;
+            --gray: #A8A29E;
+            --white: #FFFFFF;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            background: var(--white);
+            border-bottom: 4px solid var(--accent);
+            padding: 2rem 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .header-content h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header-content p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a3f5c 100%);
+            color: var(--white);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============ BANNIÈRE ILLUSTRATIVE ============ */
+        .banner-illustration {
+            background: var(--light-bg);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .banner-illustration img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            max-height: 400px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: var(--white);
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ============ SECTION INFOS PRATIQUES ============ */
+        .infos-pratiques {
+            background: var(--light-bg);
+            padding: 3rem 1rem;
+        }
+
+        .infos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h3 {
+            color: var(--accent);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .info-card p {
+            color: var(--primary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* ============ PROGRAMME ============ */
+        .programme {
+            padding: 4rem 1rem;
+            background: var(--white);
+        }
+
+        .programme-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .accordion {
+            border: 2px solid var(--light-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .accordion-item {
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .accordion-header:hover {
+            background: #ede9e3;
+            padding-left: 2rem;
+        }
+
+        .accordion-header.active {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .accordion-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 2rem;
+            background: var(--white);
+            color: var(--primary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .accordion-content ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .accordion-content li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .accordion-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ============ MOT DU FORMATEUR ============ */
+        .mot-formateur {
+            background: linear-gradient(135deg, #f0ebe5 0%, var(--light-bg) 100%);
+            padding: 4rem 1rem;
+        }
+
+        .mot-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent);
+        }
+
+        .mot-container h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .mot-container p {
+            color: var(--primary);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .mot-container p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ============ CARTE & LOCALISATION ============ */
+        .localisation {
+            padding: 4rem 1rem;
+            background: var(--white);
+        }
+
+        .localisation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .localisation-info h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .localisation-info p {
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .adresse-highlight {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .localisation-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        /* ============ HANDICAP & INCLUSION ============ */
+        .inclusion {
+            background: var(--light-bg);
+            padding: 4rem 1rem;
+        }
+
+        .inclusion-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .inclusion-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .inclusion-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .inclusion-card p {
+            color: var(--primary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .contact-referent {
+            background: #f5f2ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-referent strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        /* ============ TÉLÉCHARGEMENTS ============ */
+        .downloads {
+            padding: 4rem 1rem;
+            background: var(--white);
+        }
+
+        .downloads-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .download-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .download-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(217, 108, 63, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .download-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .download-card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .download-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border: 2px solid var(--accent);
+        }
+
+        .download-btn:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .footer-section p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-section a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .accordion-header {
+                font-size: 1rem;
+                padding: 1.2rem;
+            }
+
+            .downloads-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ ACCESSIBILITÉ ============ */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Focus visible pour accessibilité clavier */
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+    <div class="header-container">
+        <img src="logo.png" alt="Logo Bienveillance et Performance" class="logo">
+        <div class="header-content">
+            <h1>Management & Communication Émotionnelle</h1>
+            <p>Régulation émotionnelle, authenticité et performance d'équipe</p>
+        </div>
+    </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="hero-container">
+        <h2>Maîtrisez la communication sous pression</h2>
+        <p>Une formation certifiante pour transformer la façon dont vous vivez et exprimez vos émotions, créer des relations authentiques et construire des équipes plus performantes et bienveillantes.</p>
+        <a href="#inscriptions" class="cta-button">En savoir plus</a>
+    </div>
+</section>
+
+<!-- ============ BANNIÈRE ILLUSTRATIVE ============ -->
+<section class="banner-illustration">
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&q=80" alt="Communication émotionnelle positive en équipe - deux personnes en discussion constructive" style="width: 100%; max-width: 800px;">
+    </div>
+</section>
+
+<!-- ============ INFOS PRATIQUES ============ -->
+<section class="infos-pratiques">
+    <div class="infos-container">
+        <div class="info-card">
+            <h3>📅 Dates</h3>
+            <p><strong>28 mai 2026</strong><br>de 8h30 à 12h30</p>
+        </div>
+        <div class="info-card">
+            <h3>📍 Lieu</h3>
+            <p>Salle Copernic, 1er étage<br>Entreprises et Cités<br>40 rue Eugène Jacquet<br>59700 Marcq-en-Baroeul</p>
+        </div>
+        <div class="info-card">
+            <h3>👥 Public</h3>
+            <p>Managers avec 5 ans d'expérience souhaitant développer leur intelligence émotionnelle et transformer leur approche managériale</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROGRAMME ============ -->
+<section class="programme">
+    <div class="programme-container">
+        <h2 class="section-title">Le Programme</h2>
+        <div class="accordion" id="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header active" onclick="toggleAccordion(this)">
+                    <span>Séquence 1 : Entrer dans la formation & cadrage</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content active">
+                    <p><strong>Durée : 20 min</strong></p>
+                    <p>Créer un climat de sécurité, clarifier les objectifs personnels et les attentes de la formation. Vous définirez une situation concrète de communication difficile que vous aimeriez améliorer.</p>
+                    <ul>
+                        <li>Tour de présentation et d'engagement</li>
+                        <li>Clarification des objectifs individuels</li>
+                        <li>Établissement du cadre collaboratif</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Séquence 2 : Comprendre les tensions relationnelles</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Durée : 40 min</strong></p>
+                    <p>Découvrez que les tensions viennent rarement du problème lui-même, mais de la manière dont il est interprété. Vous apprendrez à dissocier les faits, les interprétations et les émotions.</p>
+                    <ul>
+                        <li>Analyse des trois dimensions d'une situation : faits, interprétations, émotions</li>
+                        <li>Cas pratiques tirés de situations réelles</li>
+                        <li>Comprendre l'impact des interprétations sur les réactions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Séquence 3 : L'impact des mots</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Durée : 45 min</strong></p>
+                    <p>Les mots ne décrivent pas la réalité, ils la créent. Une formulation factuelle ouvre le dialogue ; une formulation jugeante le ferme. Apprenez à reformuler pour apaiser au lieu d'amplifier.</p>
+                    <ul>
+                        <li>Différence entre généralisation et description factuelle</li>
+                        <li>Cas pratiques : avant/après reformulation</li>
+                        <li>Entraînement à la transformation des phrases</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Séquence 4 : S'affirmer avec justesse</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Durée : 45 min</strong></p>
+                    <p>Maîtrisez la méthode DESC pour exprimer ce vous ressentez sans agresser ni éviter. Structurer votre message en quatre étapes : Décrire, Exprimer, Spécifier, Conclure.</p>
+                    <ul>
+                        <li>Méthode DESC détaillée</li>
+                        <li>Jeux de rôle sur des scénarios réalistes</li>
+                        <li>Gestion de l'assertivité en contexte tendu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Séquence 5 : Gérer ses émotions</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Durée : 45 min</strong></p>
+                    <p>Une émotion non régulée influence directement la communication. Découvrez comment identifier vos niveaux émotionnels et utiliser des techniques simples de régulation (pause, respiration, recul).</p>
+                    <ul>
+                        <li>Niveaux émotionnels et reconnaissance des signaux</li>
+                        <li>Techniques de régulation immédiate</li>
+                        <li>Lien entre émotion et communication efficace</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Séquence 6 : Passer à l'action</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Durée : 25 min</strong></p>
+                    <p>Comprendre ne suffit pas. Vous définirez 2 actions concrètes et simples à tester dès demain. Méthode Tiny Habits® : des comportements minuscules, faciles à ancrer et à répéter.</p>
+                    <ul>
+                        <li>Formule d'action simple et efficace</li>
+                        <li>Plan d'action personnel</li>
+                        <li>Identification des petits gestes à tester rapidement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Séquence 7 : Prendre du recul grâce au feedback</span>
+                    <span class="accordion-toggle">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <p><strong>Durée : 20 min</strong></p>
+                    <p>Après l'action, le feedback transforme l'expérience en apprentissage. Vous utiliserez la structure SBI (Situation, Comportement, Impact) pour analyser vos résultats et ajuster votre approche.</p>
+                    <ul>
+                        <li>Modèle SBI pour un feedback structuré</li>
+                        <li>Auto-évaluation et réflexion</li>
+                        <li>Synthèse du parcours et perspectives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ MOT DU FORMATEUR ============ -->
+<section class="mot-formateur">
+    <div class="mot-container">
+        <h3>Mot du formateur</h3>
+        <p>Bienvenue dans cette formation Management & Communication Émotionnelle. Au cours de ces 4 heures, vous ne découvrirez pas de secret miracle, mais plutôt des outils simples et puissants pour transformer vos émotions en leviers de performance.</p>
+        <p>Le cœur du problème est rarement le problème lui-même. C'est surtout la manière dont nous le ressentons émotionnellement, dont nous l'interprétons, et dont nous l'exprimons. Vos émotions influencent directement votre communication. En apprenant à les reconnaître, les réguler et les exprimer authentiquement, vous créerez des espaces de dialogue authentique et de confiance.</p>
+        <p>Notre approche s'appuie sur trois piliers : <strong>comprendre et reconnaître vos émotions</strong>, <strong>les réguler pour une communication claire</strong> et <strong>passer à l'action concrète dès demain</strong>. Nous mettrons l'accent sur la pratique, les échanges réels et vos situations concrètes.</p>
+        <p>Je vous invite à être curieux, à explorer vos émotions sans jugement, à tester de nouvelles approches, et surtout à quitter cette formation avec un plan d'action personnel et réaliste. Le vrai travail commence sur le terrain, où vous pourrez expérimenter et progresser chaque jour.</p>
+    </div>
+</section>
+
+<!-- ============ LOCALISATION ============ -->
+<section class="localisation">
+    <div class="localisation-container">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.8156372820006!2d3.0991!3d50.6783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c31ed6a5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2s40%20Rue%20Eug%C3%A8ne%20Jacquet%2C%2059700%20Marcq-en-Baroeul!5e0!3m2!1sfr!2sfr!4v1234567890" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="localisation-info">
+            <h3>Nous vous accueillons ici</h3>
+            <div class="adresse-highlight">
+                <p><strong>Entreprises et Cités</strong><br>40 rue Eugène Jacquet<br>59700 Marcq-en-Baroeul</p>
+                <p><strong>Salle :</strong> Copernic, 1er étage</p>
+            </div>
+            <p>Accès facile en transports en commun (proche de la gare). Parking disponible sur site. Accueil à partir de 8h15. Café et viennoiseries vous seront proposés dès votre arrivée.</p>
+            <p><strong>Prévoyez :</strong> Votre stylo, un carnet de notes, et une bonne dose de curiosité ! Tout le reste sera fourni.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ HANDICAP & INCLUSION ============ -->
+<section class="inclusion">
+    <div class="inclusion-container">
+        <h2 class="section-title">Accessibilité & Handicap</h2>
+        <div class="inclusion-card">
+            <h3>Notre engagement envers l'inclusion</h3>
+            <p>Chez Bienveillance et Performance, nous croyons fermement que chacun mérite d'accéder à une formation de qualité, indépendamment de son handicap ou de ses besoins spécifiques.</p>
+            <p><strong>Nous adaptons nos formations pour :</strong></p>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                <li style="margin-bottom: 0.75rem;">Les personnes en situation de handicap moteur (accessibilité des locaux, aménagements)</li>
+                <li style="margin-bottom: 0.75rem;">Les déficiences auditives (interprète LSF sur demande, sous-titrage)</li>
+                <li style="margin-bottom: 0.75rem;">Les déficiences visuelles (supports adaptés, descriptions audio)</li>
+                <li style="margin-bottom: 0.75rem;">Les troubles cognitifs ou neurodivergence (aménagements pédagogiques, pauses)</li>
+                <li style="margin-bottom: 0.75rem;">Les besoins de santé particuliers (aménagement des horaires, accessibilité des équipements)</li>
+            </ul>
+            <div class="contact-referent">
+                <strong>🎯 Vous avez un besoin spécifique ?</strong>
+                <p>Contactez notre référent handicap <strong>Lola</strong> au moins <strong>15 jours avant la formation</strong> pour que nous puissions organiser les adaptations nécessaires. Aucune question n'est indiscrète, et votre confidentialité est garantie.</p>
+                <p style="margin-top: 0.75rem;"><strong>Email :</strong> coursrbx.lb@gmail.com</p>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--gray);">Les aménagements sont mis en place gratuitement et en toute discrétion. Nous travaillons également avec les MDPH et les organismes d'aide spécialisés si besoin.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ TÉLÉCHARGEMENTS ============ -->
+<section class="downloads">
+    <div class="downloads-container">
+        <h2 class="section-title">Ressources à télécharger</h2>
+        <div class="downloads-grid">
+            <div class="download-card">
+                <span class="download-icon">📋</span>
+                <h3>Programme détaillé</h3>
+                <p>Consultez le programme complet de la formation avec les durées et contenus de chaque séquence.</p>
+                <a href="programme.pdf" class="download-btn" download>Télécharger (PDF)</a>
+            </div>
+            <div class="download-card">
+                <span class="download-icon">📖</span>
+                <h3>Livret stagiaire</h3>
+                <p>Votre compagnon de formation : notes, exercices pratiques, et ancrage du apprentissages.</p>
+                <a href="livret-stagiaire.pdf" class="download-btn" download>Télécharger (PDF)</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>À propos de la formation</h4>
+            <p>Management & Communication Émotionnelle est une formation certifiante conçue pour les managers souhaitant développer leurs soft skills et créer des environnements de travail plus bienveillants et performants.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Contact du formateur</h4>
+            <p><strong>Email :</strong><br><a href="mailto:coursrbx.lb@gmail.com">coursrbx.lb@gmail.com</a></p>
+            <p><strong>Téléphone :</strong><br>06 xx xx xx xx</p>
+        </div>
+        <div class="footer-section">
+            <h4>Nos valeurs</h4>
+            <p><strong>Écouter</strong> vos besoins<br><strong>Inspirer</strong> vos changements<br><strong>Réussir</strong> ensemble</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Bienveillance et Performance. Tous droits réservés. | <a href="#inclusion">Politique d'inclusion et de gestion du handicap</a></p>
+    </div>
+</footer>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+    function toggleAccordion(button) {
+        // Fermer les autres accordéons
+        const allHeaders = document.querySelectorAll('.accordion-header');
+        const allContents = document.querySelectorAll('.accordion-content');
+        
+        allHeaders.forEach(header => {
+            if (header !== button) {
+                header.classList.remove('active');
+            }
+        });
+        
+        allContents.forEach(content => {
+            if (content !== button.nextElementSibling) {
+                content.classList.remove('active');
+            }
+        });
+        
+        // Basculer l'accordéon actuel
+        button.classList.toggle('active');
+        button.nextElementSibling.classList.toggle('active');
+    }
+
+    // Accessibilité clavier
+    document.querySelectorAll('.accordion-header').forEach(button => {
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleAccordion(button);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
